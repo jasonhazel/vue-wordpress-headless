@@ -4,6 +4,7 @@
       app
       color="primary"
       dark
+      flat
     >
       <VAppBarTitle>VueJS Headless Wordpress</VAppBarTitle>
       
@@ -17,8 +18,18 @@
         ADMIN
       </VBtn>
     </VAppBar>
+    
+    <VNavigationDrawer permanent app>
+      <VListItem v-for="page in pages" :key="page.id">
+        <VListItemContent>
+          <VListItemTitle>{{ page.title.rendered }}</VListItemTitle>
+        </VListItemContent>
+      </VListItem>
+    </VNavigationDrawer>
 
     <VMain>
+
+
       <VContainer fluid>
         <VCard v-for='post in posts' :key='post.id'>
           <VCardTitle>{{ post.title.rendered }}</VCardTitle>
@@ -42,6 +53,7 @@ export default {
   }),
   mounted() {
     this.$store.dispatch('getPosts')
+    this.$store.dispatch('getPages')
   },
   computed: {
   }

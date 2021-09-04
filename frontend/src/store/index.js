@@ -15,6 +15,9 @@ export default new Vuex.Store({
   mutations: {
     SET_POSTS(state, posts) {
       Vue.set(state, 'posts', posts)
+    },
+    SET_PAGES(state, pages) {
+      Vue.set(state, 'pages', pages)
     }
   },
   actions: {
@@ -22,6 +25,12 @@ export default new Vuex.Store({
       axios.get('posts')
         .then(response => {
           commit('SET_POSTS', response.data)
+        })
+    },
+    getPages({ commit }) {
+      axios.get('pages')
+        .then(response => {
+          commit('SET_PAGES', response.data)
         })
     }
   },
@@ -31,6 +40,9 @@ export default new Vuex.Store({
     },
     post: (state) => (id) => {
       return state.posts.find(post => post.id === id)
+    }, 
+    pages: (state) => {
+      return state.pages
     }
   }
 })

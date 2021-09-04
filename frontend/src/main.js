@@ -15,6 +15,9 @@ Vue.mixin({
   computed: {
     posts() {
       return this.$store.getters.posts
+    },
+    pages() {
+      return this.$store.getters.pages
     }
   }
 })
