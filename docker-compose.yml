@@ -28,8 +28,7 @@ services:
       WORDPRESS_DB_NAME: wordpress
 
   frontend:
-    build:
-      context: ./frontend
+    build: ./frontend
     ports:
       - "8080:8080"
     volumes:
