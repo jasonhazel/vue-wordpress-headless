@@ -1,2 +1,2 @@
 <?php
-// Silence is golden.asdf
+// Silence is golden.

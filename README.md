@@ -18,7 +18,9 @@ docker-compose up
 ```
 
 - Clean WordPress installation at [localhost:8000](http://localhost:8000)
-  - before hitting the frontend, set up WordPress and then change permalinks to post name
+  - before hitting the frontend
+    - set up WordPress and then change permalinks to post name
+    - change theme to Disable Frontend
 - VueJS Frontend POC at [localhost:8080](http://localhost:8080)
 
 ## todo
